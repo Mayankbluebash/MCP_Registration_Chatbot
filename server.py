@@ -7,6 +7,7 @@ from tools.view_all_registration import view_all_registration
 
 # Create FastMCP app
 app = FastMCP(name="registration-server")
+os.environ["FASTMCP_STATELESS_HTTP"] = "False"
 
 # Register tools manually
 app.tool()(add_registration)
@@ -22,5 +23,5 @@ if __name__ == "__main__":
         host="127.0.0.1",
         port=8000,
         path="/mcp",
-        stateless_http=False
     )
+
